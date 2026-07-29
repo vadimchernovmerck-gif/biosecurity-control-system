@@ -1,0 +1,48 @@
+name: Deploy AI CV Readiness
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download verified site bundle
+        run: |
+          curl --location --fail --retry 3 "https://filebin.net/5cbfaae07a384973be5272b7d4b3ef2d/site.zip" --output site.zip
+          echo "385f7cb2ef4782078f49fa732f1dc3e3ae17a8e389e3dca07f6880557a897dc8  site.zip" | sha256sum --check
+          mkdir out
+          unzip -q site.zip -d out
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
