@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[8405,["https://raw.githack.com/vadimchernovmerck-gif/biosecurity-control-system/gh-pages/_next/static/chunks/0dbhjjzl8qfwv.js","https://raw.githack.com/vadimchernovmerck-gif/biosecurity-control-system/gh-pages/_next/static/chunks/0-349n8ad2uj-.js","https://raw.githack.com/vadimchernovmerck-gif/biosecurity-control-system/gh-pages/_next/static/chunks/0129c5rg--xxy.js"],"default"]
+3:I[97367,["https://raw.githack.com/vadimchernovmerck-gif/biosecurity-control-system/gh-pages/_next/static/chunks/0dbhjjzl8qfwv.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"https://raw.githack.com/vadimchernovmerck-gif/biosecurity-control-system/gh-pages/_next/static/chunks/0-349n8ad2uj-.js","async":true}],["$","script","script-1",{"src":"https://raw.githack.com/vadimchernovmerck-gif/biosecurity-control-system/gh-pages/_next/static/chunks/0129c5rg--xxy.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"1ZfRFGXLjp16neGHR3xVN"}
+5:null

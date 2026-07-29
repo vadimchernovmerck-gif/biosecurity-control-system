@@ -1,0 +1,210 @@
+{
+  "title": "Prospective client questionnaire",
+  "subtitle": "Assessment of a poultry producer's readiness for AI/CV monitoring implementation",
+  "scoreLegend": [
+    {"state": "No / not tracked / unknown", "meaning": "Critical gap. An audit or basic digitization is required first."},
+    {"state": "Manual / irregular / no unified format", "meaning": "Data preparation can begin, but the pilot will be limited."},
+    {"state": "Regular records exist, but data is fragmented", "meaning": "A pilot is possible with manual integration and assigned owners."},
+    {"state": "Digital records and clear data owners are in place", "meaning": "The company is ready for a pilot at the selected site."},
+    {"state": "Integrated, automated data and response procedures are in place", "meaning": "Ready for industrial rollout and scaling."}
+  ],
+  "stages": [
+    {"stage": "Not ready", "decision": "Perform a technical and production audit, collect baseline data, and appoint a project owner."},
+    {"stage": "Basic readiness", "decision": "Run a 2-4 week preparation phase covering cameras, data exports, and alert response SOPs."},
+    {"stage": "Ready for pilot", "decision": "Run a full-cycle pilot in one poultry house with fixed KPIs and weekly reviews."},
+    {"stage": "Ready for industrial rollout", "decision": "Connect several houses, integrate production systems, and configure roles and dashboards."},
+    {"stage": "Ready to scale", "decision": "Scale across the site or group, add predictive analytics, and compare cycles and sites."}
+  ],
+  "sections": {
+    "passport": {
+      "title": "0. Client profile and contacts",
+      "items": {
+        "company": {"label": "Company / holding name", "inputHint": "Enter company name"},
+        "address": {"label": "Country, region, and site address", "inputHint": "Enter address"},
+        "enterprise_type": {"label": "Business type", "options": ["Broiler", "Layer", "Breeder flock", "Hatchery", "Feed mill", "Processing"], "inputHint": "Other"},
+        "sites": {"label": "Number of sites / buildings / poultry houses", "inputHint": "Sites / buildings / poultry houses"},
+        "flock": {"label": "Bird capacity at one time", "inputHint": "Birds; average batch size"},
+        "breed": {"label": "Breed / cross", "options": ["Ross 308", "Cobb 500", "Hubbard", "Arbor Acres", "ISA/Hy-Line"], "inputHint": "Other"},
+        "cycle": {"label": "Growing cycle / production period", "inputHint": "Broiler: days; layer/breeder: weeks; downtime: days"},
+        "client_contact": {"label": "Primary client contact", "inputHint": "Name, title, phone/email"},
+        "decision_maker": {"label": "Decision maker", "options": ["High involvement", "Medium involvement", "Low involvement"], "inputHint": "Name and title"},
+        "next_step_format": {"label": "Preferred next step", "options": ["Online meeting", "On-site audit", "Technical specification", "Pilot", "Commercial proposal"], "inputHint": "Comment"}
+      }
+    },
+    "business": {
+      "title": "1. Business objective and client motivation",
+      "description": "This block determines whether the client has a measurable pain point and a valid economic case.",
+      "items": {
+        "main_problem": {"label": "What is the main problem the system should solve?", "options": ["Mortality", "Disease", "Microclimate", "Wet litter", "Weight gain/FCR", "Biosecurity", "Staff monitoring"], "inputHint": "Other / clarification"},
+        "financial_goal": {"label": "Is there a specific financial target?", "options": ["Reduce mortality", "Improve FCR", "Increase weight gain", "Reduce medication costs", "No"], "inputHint": "Target percentages, grams, or amounts"},
+        "daily_users": {"label": "Who will use the system every day?", "options": ["Veterinary team", "Production technologist", "Site manager", "Engineer", "IT", "Owner", "No one assigned"], "inputHint": "Names / roles"},
+        "digital_projects": {"label": "Does the company have experience with digital projects?", "options": ["Yes, successful", "Yes, partly successful", "Negative experience", "No experience"]},
+        "pilot_site": {"label": "Readiness to allocate a pilot site", "options": ["Yes, selected", "Yes, not yet selected", "Under discussion", "No"]},
+        "pilot_owner": {"label": "Readiness to appoint a pilot owner", "options": ["Appointed", "Will be appointed", "Not determined", "No resource"]},
+        "pilot_kpi": {"label": "Readiness to measure impact using KPIs", "options": ["Yes, KPIs approved", "KPIs can be agreed", "Only general expectations", "No"], "inputHint": "Proposed KPIs"}
+      }
+    },
+    "production": {
+      "title": "2. Production profile",
+      "description": "This block clarifies the housing technology, scale, and comparability of production data.",
+      "items": {
+        "housing_type": {"label": "Housing system", "options": ["Floor", "Cage", "Aviary", "Combined", "Open-sided house", "Closed house"]},
+        "age_groups": {"label": "Age groups / stages", "options": ["0-7 days", "8-14 days", "15-21 days", "22-35/42 days", "Layer", "Breeder rearing", "Breeder production"]},
+        "density_control": {"label": "Is stocking density monitored?", "options": ["Automatically", "By logbook", "Approximately", "Not monitored"], "inputHint": "kg/m²"},
+        "weight_plan_fact": {"label": "Is planned vs actual live weight tracked?", "options": ["Daily", "Weekly", "Control group", "Final weight only", "No"]},
+        "feed_fcr": {"label": "Are feed consumption and FCR tracked?", "options": ["Automatically", "Daily manually", "By batch", "Total consumption only", "No"]},
+        "water_accounting": {"label": "Is water consumption tracked?", "options": ["By poultry house", "By line", "Main meter", "Approximately", "No"]},
+        "mortality_reasons": {"label": "Are culling and mortality recorded by cause?", "options": ["Daily by cause", "Quantity only", "Irregularly", "No"]},
+        "control_group": {"label": "Is there a control group for weighing / observation?", "options": ["Yes, ≥50 birds", "Yes, <50 birds", "Planned", "No"]},
+        "past_cycles": {"label": "Are historical cycle data available?", "options": ["≥10 cycles", "3-9 cycles", "1-2 cycles", "No / cannot be exported"]}
+      }
+    },
+    "veterinary": {
+      "title": "3. Veterinary health and biosecurity",
+      "description": "This block shows whether AI insights can be linked to behavior, mortality, diagnoses, laboratory results, and staff actions.",
+      "items": {
+        "vet_service": {"label": "Veterinary service", "options": ["In-house", "Contract veterinarian", "Combined responsibility", "None"]},
+        "vaccination": {"label": "Vaccinations and treatments", "options": ["Electronic log", "Paper log", "Partly recorded", "Not systematized"]},
+        "lab_diagnostics": {"label": "Laboratory diagnostics", "options": ["Regularly according to plan", "For clinical cases", "Rarely", "Not performed"]},
+        "lab_format": {"label": "Laboratory data format", "options": ["API/Excel", "PDF/scans", "Paper", "No archive"]},
+        "diagnoses": {"label": "Diagnoses and preliminary diagnoses", "options": ["Structured with dates", "Free text", "Verbal", "Not recorded"]},
+        "flock_status": {"label": "Flock status system", "options": ["Statuses / risk levels exist", "Partial", "Manual only", "None"]},
+        "biosecurity_entry": {"label": "Entry biosecurity", "options": ["Access control + log", "Manual log", "Irregular", "No control"]},
+        "staff_violations": {"label": "Staff violation monitoring", "options": ["Cameras/access control", "Shift supervisor", "Only after incidents", "None"]},
+        "dead_bird_disposal": {"label": "Dead bird disposal", "options": ["Procedure + log", "Procedure without digital records", "Verbal process", "Not described"]},
+        "clinical_media": {"label": "Readiness to capture clinical cases in photo/video", "options": ["Yes, under SOP", "Yes, manually", "Staff resistance", "No"]}
+      }
+    },
+    "microclimate": {
+      "title": "4. Microclimate, engineering, and sensors",
+      "description": "This block assesses whether computer vision can be combined with temperature, humidity, CO₂, NH₃, ventilation, water, and feed data.",
+      "items": {
+        "temperature": {"label": "Temperature", "options": ["Automatic monitoring", "Sensors without archive", "Manual checks", "None"]},
+        "humidity": {"label": "Humidity", "options": ["Automatic", "Manual checks", "Occasional", "None"]},
+        "co2": {"label": "CO₂", "options": ["Sensors with archive", "Sensors without archive", "Spot measurements", "None"]},
+        "nh3": {"label": "NH₃", "options": ["Sensors with archive", "Sensors without archive", "Spot measurements", "None"]},
+        "ventilation": {"label": "Ventilation control", "options": ["Automatic", "Semi-automatic", "Manual", "Not documented"]},
+        "microclimate_archive": {"label": "Microclimate data archive", "options": ["≥12 months", "3-12 months", "<3 months", "No archive"]},
+        "sensor_calibration": {"label": "Sensor calibration", "options": ["On schedule", "Irregular", "Not performed", "Unknown"]},
+        "house_plan": {"label": "Poultry house and equipment layout", "options": ["Current drawings available", "Old drawings available", "Verbal description only", "None"]},
+        "backup_power": {"label": "Backup power", "options": ["Generator + UPS", "Generator", "Planned", "None"]},
+        "extra_sensors": {"label": "Readiness to install additional sensors", "options": ["Yes", "Yes, after approval", "Limited", "No"]}
+      }
+    },
+    "video": {
+      "title": "5. Video, cameras, and computer vision conditions",
+      "description": "A critical CV block covering image quality, visibility, lighting, network access, and video retention.",
+      "items": {
+        "video_system": {"label": "Is a video surveillance system installed?", "options": ["Yes, IP cameras", "Analog cameras", "Partially", "No"]},
+        "cameras_count": {"label": "Number of cameras per poultry house", "options": [">80% coverage", "50-80% coverage", "<50% coverage", "Coverage unknown"], "inputHint": "Number of cameras"},
+        "video_quality": {"label": "Video quality", "options": ["4K/2K", "1080p", "<1080p", "Unknown"]},
+        "night_video": {"label": "Night / low-light video", "options": ["Works well", "Some limitations", "Not available", "Not tested"]},
+        "image_stability": {"label": "Image stability", "options": ["No glare/dust problems", "Occasionally degrades", "Often poor quality", "Unknown"]},
+        "stream_access": {"label": "Access to RTSP/ONVIF/video stream", "options": ["Available", "Can be provided", "Unknown", "No access"]},
+        "video_archive": {"label": "Video archive", "options": ["≥30 days", "7-30 days", "<7 days", "No archive"]},
+        "model_training_consent": {"label": "Consent to use video for model training", "options": ["Yes", "Yes, after NDA/DPA", "Requires legal approval", "No"]},
+        "detection_zones": {"label": "Are wet litter, mortality, and clustering zones visible?", "options": ["Yes, clearly visible", "Partially", "Cameras must be changed", "No"]},
+        "test_cameras": {"label": "Can test cameras be installed?", "options": ["Yes", "Yes, after approval", "Temporarily only", "No"]}
+      }
+    },
+    "it": {
+      "title": "6. IT infrastructure, network, and security",
+      "description": "This block determines whether the system can be connected safely and technically.",
+      "items": {
+        "internet": {"label": "Internet connectivity at the site", "options": ["Fiber", "4G/5G", "Radio link", "Unstable / none"], "inputHint": "Speed, Mbps"},
+        "local_network": {"label": "Local network in poultry houses", "options": ["Ethernet", "Wi-Fi", "Partial", "None"]},
+        "edge_server": {"label": "Server / edge computing", "options": ["GPU/server available", "Standard server available", "Cloud only", "None"]},
+        "storage": {"label": "Data storage", "options": ["NAS/server", "Cloud", "PC/recorder", "None"]},
+        "it_service": {"label": "IT support", "options": ["In-house 24/7", "In-house during business hours", "Outsourced", "None"]},
+        "access_policy": {"label": "Access policy", "options": ["Roles + 2FA", "Roles without 2FA", "Shared passwords", "No policy"]},
+        "cybersecurity": {"label": "Cybersecurity", "options": ["Firewall/VPN/antivirus", "Partial", "Minimal", "None"]},
+        "vendor_access": {"label": "External vendor access", "options": ["Procedure exists", "By service request", "Separate approval required", "No procedure"]},
+        "external_integrations": {"label": "Integration with external services", "options": ["APIs allowed", "File export only", "Requires legal/IT review", "Prohibited"]}
+      }
+    },
+    "data": {
+      "title": "7. Data, record systems, and integrations",
+      "description": "This block determines how much manual work will be required for analytics and predictive models.",
+      "items": {
+        "erp_mes": {"label": "ERP/MES/production accounting", "options": ["Available and used", "Partially used", "Excel/Google Sheets", "None"]},
+        "daily_data_format": {"label": "Daily production data format", "options": ["API/database", "Excel/CSV", "PDF/scans", "Paper/verbal"]},
+        "feed_data": {"label": "Feed data", "options": ["Daily by poultry house", "By site", "Total consumption only", "None"]},
+        "water_data": {"label": "Water data", "options": ["By poultry house/line", "By site", "Irregular", "None"]},
+        "medicine_data": {"label": "Medication/vaccine data", "options": ["Date, product, dose, batch", "Partial", "Paper", "None"]},
+        "lab_data": {"label": "Laboratory data", "options": ["Structured", "PDF/scans", "Rare", "None"]},
+        "directories": {"label": "Unified house/flock/cycle reference data", "options": ["Available", "Partial", "Different naming conventions", "None"]},
+        "data_quality": {"label": "Data quality", "options": ["Validated", "Errors exist but are corrected", "Many gaps", "Unknown"]},
+        "historical_export": {"label": "Historical data export capability", "options": ["Yes, ≥12 months", "Yes, 3-12 months", "Manual only", "No"]}
+      }
+    },
+    "operations": {
+      "title": "8. Operational readiness for a pilot",
+      "description": "This block shows whether the company can use the system effectively after installation.",
+      "items": {
+        "pilot_house_selected": {"label": "Has a pilot poultry house/building been selected?", "options": ["Yes", "2-3 candidates", "Not selected", "No"]},
+        "pilot_period": {"label": "Pilot period", "options": ["Full cycle", "Part of a cycle", "Equipment test only", "Not determined"]},
+        "pilot_kpi_status": {"label": "Pilot KPIs", "options": ["Approved", "Under discussion", "General objective only", "None"]},
+        "alert_sop": {"label": "Alert response procedure", "options": ["Available", "Will be developed", "Manual response only", "None"]},
+        "alert_confirmer": {"label": "Who validates alerts?", "options": ["Veterinarian", "Technologist", "Operator", "No one assigned"], "inputHint": "Name / role"},
+        "action_log": {"label": "Readiness to maintain an action log", "options": ["Yes, daily", "Yes, for alerts", "Difficult", "No"]},
+        "staff_training": {"label": "Readiness to train staff", "options": ["Yes", "Yes, limited", "Resistance exists", "No"]},
+        "site_access": {"label": "Site access for installation", "options": ["Procedure exists", "Approval required", "Difficult", "No access"]},
+        "control_comparison": {"label": "Readiness to compare against a control period/house", "options": ["Yes", "Possible", "No comparable data", "No"]}
+      }
+    },
+    "economics": {
+      "title": "9. Economics, procurement, and legal constraints",
+      "description": "This block clarifies the sales path and the probability of moving from pilot to contract.",
+      "items": {
+        "pilot_budget": {"label": "Pilot budget", "options": ["Approved", "Under discussion", "Can be allocated after proposal", "No budget"]},
+        "budget_reference": {"label": "Budget range", "options": ["RUB", "USD", "EUR"], "inputHint": "Pilot / rollout / other currency"},
+        "procurement": {"label": "Procurement process", "options": ["Direct purchase", "Tender", "Through an integrator", "Unknown"]},
+        "decision_time": {"label": "Decision timeline", "options": ["<1 month", "1-3 months", "3-6 months", ">6 months"]},
+        "nda_dpa": {"label": "Is an NDA/DPA required?", "options": ["Already prepared", "Must be prepared", "Not required", "Unknown"]},
+        "data_video_limits": {"label": "Data/video restrictions", "options": ["None", "Local storage only", "Cloud prohibited", "Requires legal review"]},
+        "pilot_to_rollout": {"label": "Criterion for moving from pilot to rollout", "options": ["Economic impact", "Alert accuracy", "Usability", "Owner's decision", "Not determined"]}
+      }
+    },
+    "minimum": {
+      "title": "10. Minimum conditions for launching a pilot",
+      "description": "If conditions 1-3 are not met, a pilot is not recommended. If conditions 4-7 are not met, a short preparation phase is required.",
+      "items": {
+        "pilot_owner_condition": {"label": "One pilot poultry house/building and one client-side owner have been selected."},
+        "video_access_condition": {"label": "Video access is available, or test camera installation is permitted."},
+        "daily_data_condition": {"label": "Daily data are available at minimum for mortality, live weight, feed, and water."},
+        "microclimate_condition": {"label": "Baseline microclimate data include temperature and humidity; CO₂/NH₃ are desirable."},
+        "kpi_dates_condition": {"label": "Pilot KPIs and start/end dates have been agreed."},
+        "alerts_condition": {"label": "The alert verification process defines who reviews, validates, and responds."},
+        "legal_access_condition": {"label": "Access, NDA/DPA, and data retention restrictions have been agreed."}
+      }
+    },
+    "computed": {
+      "title": "11. Overall client readiness assessment"
+    },
+    "summary": {
+      "title": "12. Post-interview summary",
+      "items": {
+        "client_pain": {"label": "Client's main pain point", "inputHint": "Briefly describe the pain point"},
+        "implementation_format": {"label": "Proposed implementation format", "options": ["Audit", "Data preparation", "Pilot", "Rollout", "Scaling"]},
+        "pilot_location": {"label": "Pilot site / building", "inputHint": "Site, building, poultry house"},
+        "pilot_kpis": {"label": "Key pilot KPIs", "inputHint": "1) 2) 3)"},
+        "critical_risks": {"label": "Critical risks", "options": ["No video", "No data", "No owner", "No budget", "IT restrictions", "Staff resistance"]},
+        "request_from_client": {"label": "Information to request from the client", "options": ["Poultry house plan", "Video samples", "Cycle Excel files", "Network diagram", "Sensor data", "Procedures"]},
+        "next_action_date": {"label": "Next step and date", "inputHint": "Action and date"}
+      }
+    },
+    "quick_call": {
+      "title": "13. Short version for the first call (10-15 minutes)",
+      "items": {
+        "q1": {"label": "What is the main issue: mortality, weight gain, FCR, disease, litter, biosecurity, or staff?", "inputHint": "Answer"},
+        "q2": {"label": "Are there cameras in the poultry houses, and can video or a stream be accessed?", "inputHint": "Answer"},
+        "q3": {"label": "What is recorded daily: weight, feed, water, mortality, medication, microclimate?", "inputHint": "Answer"},
+        "q4": {"label": "Are historical cycle data available, and in what format?", "inputHint": "Answer"},
+        "q5": {"label": "Can one poultry house be selected for a full-cycle pilot?", "inputHint": "Answer"},
+        "q6": {"label": "Who will own the pilot on the client side?", "inputHint": "Answer"},
+        "q7": {"label": "What economic result will define success?", "inputHint": "Answer"},
+        "q8": {"label": "Are there restrictions related to video, cloud, access, or NDA?", "inputHint": "Answer"}
+      }
+    }
+  }
+}
