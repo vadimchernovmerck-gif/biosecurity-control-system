@@ -22,8 +22,8 @@ jobs:
 
       - name: Download verified site bundle
         run: |
-          curl --location --fail --retry 3 "https://filebin.net/78228001cdc7471bbf7f5fcaf9d1c9da/rawgithack-site.zip" --output site.zip
-          echo "49499538f6fd69bb8d9b3544fc819c46337bdbf1f3cc1321c4e09241d5d0b73e  site.zip" | sha256sum --check
+          curl --location --fail --retry 3 "https://filebin.net/7ffe12c444d84e66a60cf488e3ce4334/html-preview-site.zip" --output site.zip
+          echo "c3e9a7133e61895aa0468e18de421d5c2e979d9bff19b8107524b18b3f5819d1  site.zip" | sha256sum --check
           mkdir "${RUNNER_TEMP}/site"
           unzip -q site.zip -d "${RUNNER_TEMP}/site"
           test -f "${RUNNER_TEMP}/site/index.html"
