@@ -22,8 +22,8 @@ jobs:
 
       - name: Download verified site bundle
         run: |
-          curl --location --fail --retry 3 "https://filebin.net/bdd6dae6fee94a1487ff4444342db158/compatible-site.zip" --output site.zip
-          echo "7512a19f42f1978e1ad14f9c3f287cb4717fb31e47b84898d44092cf90b115eb  site.zip" | sha256sum --check
+          curl --location --fail --retry 3 "https://filebin.net/a1c06a4ae4574acb92426c394f3a19ae/json-fallback-site.zip" --output site.zip
+          echo "f9692fc56fb099f8649893b50e11a8a05bd15ed8fe927231827668ccdbf8d0a3  site.zip" | sha256sum --check
           mkdir "${RUNNER_TEMP}/site"
           unzip -q site.zip -d "${RUNNER_TEMP}/site"
           test -f "${RUNNER_TEMP}/site/index.html"
