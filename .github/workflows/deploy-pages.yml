@@ -24,7 +24,8 @@ jobs:
           curl --location --fail --retry 3 "https://filebin.net/5cbfaae07a384973be5272b7d4b3ef2d/site.zip" --output site.zip
           echo "385f7cb2ef4782078f49fa732f1dc3e3ae17a8e389e3dca07f6880557a897dc8  site.zip" | sha256sum --check
           mkdir out
-          unzip -q site.zip -d out
+          unzip -q site.zip -d out || test $? -eq 1
+          test -f out/index.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
